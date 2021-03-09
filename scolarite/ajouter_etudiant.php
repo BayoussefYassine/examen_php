@@ -1,4 +1,19 @@
 <?php
+
+    session_start();
+     //check user
+     if(!isset($_SESSION['username'])){
+        header("Location: ../login.php");
+        exit();
+    }
+
+
+    // Logout
+    if(isset($_POST['logout'])){
+        session_destroy();
+        header("Location: ../login.php");
+    }
+
     $annonce = "";
     require_once('../connection.php');
     if(isset($_POST['Ajouter_etudiant'])){
@@ -9,7 +24,7 @@
         $annonce = "Un Etudiant a été bien enregistré";
     }
 
-    session_start();
+ 
 ?>
 <?php include('../templates/head.php'); ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,13 +36,13 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
             </li>
             
             </ul>
-            <form class="form-inline my-2 my-lg-0">
+            <form class="form-inline my-2 my-lg-0" method="POST">
                 <h5 class="mr-4">Welcome Scolarité</h5>
-                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Logout</button>
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit" name="logout">Logout</button>
             </form>
         </div>
         </nav>
