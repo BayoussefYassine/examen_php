@@ -1,6 +1,7 @@
 <?php
 
     session_start();
+    require('../connection.php');
      //check user
      if(!isset($_SESSION['username'])){
         header("Location: ../login.php");
@@ -13,6 +14,8 @@
         session_destroy();
         header("Location: ../login.php");
     }
+
+    
 
 
 ?>
