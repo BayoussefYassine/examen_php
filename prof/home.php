@@ -1,3 +1,11 @@
+<?php
+
+    session_start();
+    
+?>
+
+
+
 <?php include('../templates/head.php'); ?>
 
 
@@ -15,7 +23,7 @@
             
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <h5 class="mr-4">Welcome Mr.Prof</h5>
+                <h5 class="mr-4">Welcome <?php $_SESSION['username']; ?></h5>
                 <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Logout</button>
             </form>
         </div>

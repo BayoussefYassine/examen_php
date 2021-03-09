@@ -1,7 +1,9 @@
 <?php
 
+    session_start();
     require('connection.php');
     if(isset($_POST['username']) && $_POST['password']){
+
 
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -14,12 +16,14 @@
         if($username == $var['username'] and $password == $var['password']){
 
             if($var['role'] === 'admin'){
-         
+                $_SESSION['username'] = $var['username'];
                 header('Location:admin/home.php');
             }
             else if($var['role'] === 'prof'){
+                $_SESSION['username'] = $var['username'];
                 header('Location:prof/home.php');
             }else{
+                $_SESSION['username'] = $var['username'];
                 header('Location:scolarite/home.php');
             }
 
