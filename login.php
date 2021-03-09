@@ -5,7 +5,7 @@
 
         $username = $_POST['username'];
         $password = $_POST['password'];
-
+        $error = '';
 
         $con = new ConnectionClass();
 
@@ -24,6 +24,8 @@
             }
 
 
+            }else{
+                $error = 'Username ou mot de passe incorrect';
             }
         }
 
@@ -40,11 +42,8 @@
         <h1>Gestion des absence</h1>
     </div>
 
-    <?php if(!empty($error)):?>
-        <div class="text-center mt-3 pt-3">
-            <h6 class="text-danger"><?php echo $error; ?></h6>
-        </div>
-    <?php endif;?>
+
+   <p class="text-center text-danger"><?php echo $error ?? '' ?></p>
     
     <div class="c-login container bg-white p-3 shadow p-3 mb-5 bg-white rounded-lg">
 
