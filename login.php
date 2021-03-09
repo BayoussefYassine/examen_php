@@ -37,9 +37,6 @@
 
 ?>
 
-
-
-
 <?php include('templates/head.php'); ?>
 
     <div class="logo text-center my-5">

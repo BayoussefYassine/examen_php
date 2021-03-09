@@ -1,16 +1,24 @@
 <?php
 
     session_start();
-    if(!isset($_SESSION["username"])){
-        header("Location: login.php");
+     //check user
+     if(!isset($_SESSION['username'])){
+        header("Location: ../login.php");
         exit();
+    }
+
+
+    // Logout
+    if(isset($_POST['logout'])){
+        session_destroy();
+        header("Location: ../login.php");
     }
 
 
 ?>
 
 <?php include('../templates/head.php'); ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">ENSA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,9 +31,9 @@
             </li>
             
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <h5 class="mr-4">Welcome Scolarité</h5>
-                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Logout</button>
+            <form class="form-inline my-2 my-lg-0" method="POST">
+                <h5 class="mr-4">Welcome <?php echo $_SESSION['username']; ?></h5>
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit" name="logout">Logout</button>
             </form>
         </div>
         </nav>
