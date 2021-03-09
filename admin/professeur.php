@@ -25,7 +25,7 @@
         $dic = ['username' => $_POST['username'], 'password'=> $_POST['password'], 'role' => 'prof'];
         $con->InsertRowIntoTable('users',$dic);
 
-        $annonce = "Un agent de scolarité a été bien un enregistré";
+        $annonce = "Un Enseignant a été bien un enregistré";
     }
 
  
