@@ -105,6 +105,12 @@ class ConnectionClass {
        $result = $this->getConnection()->query($sql)->fetchAll();
        return $result;
    }
+   public function SelectWhereOperationFromTableParam($table,$col, $value,$op,$param)
+   {
+       $sql = "SELECT $param FROM $table WHERE $col $op '$value' ";
+       $result = $this->getConnection()->query($sql)->fetchAll();
+       return $result;
+   }
 
 }
 

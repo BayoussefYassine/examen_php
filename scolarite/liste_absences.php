@@ -65,7 +65,7 @@
                 </div>
                 <br><br>
                 <div class ="text-center mr-5 my-5">
-                <form action="liste_pdf.php">
+                <form action="liste_pdf.php" method ="post">
                 <input class="btn btn-primary" type="submit" name="telecharger" value="telecharger pdf">
                 </form>
                 </div>
