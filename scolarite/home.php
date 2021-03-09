@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
     session_start();
@@ -10,8 +9,6 @@
 
 ?>
 
-<h1>Scolarité page</h1>
-=======
 <?php include('../templates/head.php'); ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">ENSA</a>
@@ -32,5 +29,21 @@
             </form>
         </div>
         </nav>
+
+        <div class="container">
+
+            <h3 class="text-primary ml-4">Bienvenue au centre de Scolarité</h3>
+            <br>
+            <h5>Choisissez l'action que vous voulez faire</h5>
+            <br/><hr>
+
+            <form action = "addChanges.php" method="post">
+
+                <input class="btn btn-primary ml-4" type="submit" name="Ajouter_filiere" value="ajouter  une filiere">
+                <input class="btn btn-primary ml-4" type="submit" name="Ajouter_etudiant" value="ajouter  Un etudiant">
+                <input class="btn btn-primary ml-4" type="submit" name="liste" value="liste des abcences">
+
+            </form>
+
+        </div>
 <?php include('../templates/scripts.php') ?>
->>>>>>> bbd2a584ddee0e3d9651efa38e3cbe8cce0b670f

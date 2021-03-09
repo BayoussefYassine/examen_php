@@ -27,6 +27,13 @@ class ConnectionClass {
        $result = $this->getConnection()->query($sql)->fetchAll();
        return $result;
    }
+
+   public function SelectWhereFromTable($table,$col, $value)
+   {
+       $sql = "SELECT * FROM $table WHERE $col = '$value' ";
+       $result = $this->getConnection()->query($sql)->fetchAll();
+       return $result;
+   }
    
    // delete a row from table
    public function DeleteRowFromTable($table, $col, $value)
@@ -90,6 +97,13 @@ class ConnectionClass {
     }
     $marks = implode(",", $marks);
     return $marks;
+   }
+
+   public function SelectWhereOperationFromTable($table,$col, $value,$op)
+   {
+       $sql = "SELECT * FROM $table WHERE $col $op '$value' ";
+       $result = $this->getConnection()->query($sql)->fetchAll();
+       return $result;
    }
 
 }
