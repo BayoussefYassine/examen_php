@@ -1,7 +1,6 @@
 <?php
 
     session_start();
-    require('../connection.php');
      //check user
      if(!isset($_SESSION['username'])){
         header("Location: ../login.php");
@@ -15,12 +14,8 @@
         header("Location: ../login.php");
     }
 
-    
-
 
 ?>
-
-
 
 <?php include('../templates/head.php'); ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -43,8 +38,22 @@
         </div>
         </nav>
 
-        <h1>Admin page</h1>
+        <div class="container">
 
+            <h3 class="text-primary ml-4">Bienvenue au centre d'adminstration</h3>
+            <br>
+            <h5>Choisissez l'action que vous voulez faire</h5>
+            <br/><hr>
 
+            <form action = "addChanges.php" method="post">
 
+                <input class="btn btn-primary ml-4" type="submit" name="Ajouter_filiere" value="ajouter  une filiere">
+                <input class="btn btn-primary ml-4" type="submit" name="Ajouter_etudiant" value="ajouter  Un etudiant">
+                <input class="btn btn-primary ml-4" type="submit" name="liste" value="liste des abcences">
+                <input class="btn btn-danger ml-4" type="submit" name="prof" value="ajouter un professeur">
+                <input class="btn btn-danger ml-4" type="submit" name="scolarite" value="ajouter un agent de scolarité">
+
+            </form>
+
+        </div>
 <?php include('../templates/scripts.php') ?>
